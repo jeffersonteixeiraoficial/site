@@ -1,7 +1,7 @@
 <?php
 require_once "connection.php";
 
-$sql = "SELECT * FROM usuarios";
+$sql = "SELECT * FROM dbusuarios";
 $result = $mysqli->query($sql);
 
 // Verifica se houve algum erro na consulta

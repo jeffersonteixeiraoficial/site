@@ -1,4 +1,4 @@
-<?php
+a<?php
 require_once "connection.php";
 
 $sql = "SELECT * FROM usuarios";
@@ -35,8 +35,8 @@ $mysqli->close();
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['nome'] . "</td>";
                 echo "<td>" . $row['email'] . "</td>";
-                echo "<td><input type='submit' value='Atualizar' name='id' value='" . $row['id'] . "'></td>";
-                echo "<td><input type='submit' value='Deletar' value='" . $row['id'] . "'></td>";
+                echo "<td><a href='atualizar.php?id=".$row['id']."'>atualizar</a></td>";
+                echo "<td><input type='submit' value='Deletar'value='" . $row['id'] . "'></td>";
                 echo "</tr>";
             }
             echo "</table>";
@@ -57,7 +57,7 @@ $mysqli->close();
 require_once "connection.php"; // Este arquivo deve conter as informações de conexão com o banco de dados
 if(isset($_POST['id'])) {
     $id  = $_POST['id'];
-    $sql = "SELECT * FROM usuarios WHERE id = $id";
+    $sql = "SELECT * FROM dbusuarios WHERE id = $id";
 
     $result = $mysqli->query($sql);
 
